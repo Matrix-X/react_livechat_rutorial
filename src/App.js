@@ -24,20 +24,32 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        // const chatManager = new Chatkit.ChatManager({
-        //     instanceLocator,
-        //     userId: 'hbj418',
-        //     tokenProvider: new Chatkit.TokenProvider({
-        //         url: tokenUrl
-        //     })
-        // })
-        //
-        // chatManager.connect()
+        const chatManager = new Chatkit.ChatManager({
+            instanceLocator,
+            userId: 'hbj418',
+            tokenProvider: new Chatkit.TokenProvider({
+                url: tokenUrl
+            })
+        })
+        // console.log(chatManager);
+
+        chatManager.connect()
         // .then(currentUser => {
-        //     this.currentUser = currentUser
-        //     this.getRooms()
+        //   currentUser.subscribeToRoom({
+        //     roomId: 19385723,
+        //     hooks: {
+        //       onNewMessage: message => {
+        //         console.log('message.text: ', message.text);
+        //       }
+        //     }
+        //   })
         // })
-        // .catch(err => console.log('error on connecting: ', err))
+        .then(currentUser => {
+            this.currentUser = currentUser
+            this.getRooms()
+        })
+        .catch(err => console.log('error on connecting: ', err))
+
     }
 
     getRooms() {
