@@ -17,6 +17,7 @@ class MessageList extends React.Component {
     }
 
     render() {
+        // console.log(this.props.roomId);
         if (!this.props.roomId) {
             return (
                 <div className="message-list">

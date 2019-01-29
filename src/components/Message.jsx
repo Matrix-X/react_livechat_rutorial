@@ -10,3 +10,6 @@ function Message(props) {
 }
 
 export default Message
+
+// https://reactjs.org/docs/components-and-props.html
+// functional components

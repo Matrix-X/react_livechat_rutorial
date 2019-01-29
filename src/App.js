@@ -35,11 +35,15 @@ class App extends React.Component {
 
         chatManager.connect()
         // .then(currentUser => {
-        //   currentUser.subscribeToRoom({
+        //   this.currentUser = currentUser
+        //   this.currentUser.subscribeToRoom({
         //     roomId: 19385723,
         //     hooks: {
         //       onNewMessage: message => {
         //         console.log('message.text: ', message.text);
+        //         this.setState({
+        //           messages: [...this.state.messages, message]
+        //         });
         //       }
         //     }
         //   })
